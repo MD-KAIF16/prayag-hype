@@ -54,10 +54,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center gap-4"
           >
             <MagneticButton className="bg-primary text-primary-foreground px-8 py-4 text-lg hover:bg-primary/90 w-full sm:w-auto">
-              Promote My Business
+              Get Featured on Prayag Hype
             </MagneticButton>
             <MagneticButton className="glass text-white px-8 py-4 text-lg hover:bg-white/10 w-full sm:w-auto gap-2">
-              <Play className="w-5 h-5" /> View Our Work
+              <Play className="w-5 h-5" /> View Real Campaigns
             </MagneticButton>
           </motion.div>
         </div>
@@ -70,10 +70,10 @@ export function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-24"
         >
           {[
-            { label: "Followers", value: 149, suffix: "" },
-            { label: "Posts", value: 4, suffix: "" },
-            { label: "Following", value: 5, suffix: "" },
-            { label: "Prayagraj Focus", value: 100, suffix: "%" },
+            { label: "Instagram Followers", value: 149, suffix: "+" },
+            { label: "Published Campaigns", value: 4, suffix: "" },
+            { label: "Highest Performing Reel", value: 34.6, suffix: "K+" },
+            { label: "Total Campaign Views", value: 42, suffix: "K+" },
           ].map((stat, index) => (
             <div key={index} className="glass-card rounded-2xl p-6 text-center border-white/5 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

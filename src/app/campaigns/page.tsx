@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { MapPin, Eye, Play, ArrowUpRight, Search } from "lucide-react";
+import { MapPin, Eye, Play, ArrowUpRight, Search, BadgeCheck } from "lucide-react";
 import Image from "next/image";
 
 export default function CampaignsPage() {
@@ -30,7 +30,7 @@ export default function CampaignsPage() {
       desc: "A storytelling campaign featuring the journey of Bombay Famous Shawarma.",
       views: "3252+",
       link: "https://www.instagram.com/reel/DZAh7Ido07d/",
-      img: "https://images.unsplash.com/photo-1626804475297-41609ae08bfe?w=800&q=80"
+      img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80"
     },
     {
       name: "Atala Pudina Chai",
@@ -136,19 +136,22 @@ export default function CampaignsPage() {
                 </div>
               </div>
               
-              <div className="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 w-fit">
+                    <BadgeCheck className="w-3 h-3" /> Verified Campaign
+                  </span>
+                  <span className="bg-primary/10 text-primary border border-primary/20 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider w-fit">
                     {campaign.category}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{campaign.name}</h3>
-                  <div className="flex items-center gap-1.5 text-sm text-white/50 mb-4">
-                    <MapPin className="w-4 h-4" /> {campaign.location}
-                  </div>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {campaign.desc}
-                  </p>
+                  </span>
                 </div>
+                <h3 className="text-2xl font-bold text-white mb-2">{campaign.name}</h3>
+                <div className="flex items-center gap-1.5 text-sm text-white/60 mb-4">
+                  <MapPin className="w-4 h-4 text-primary" /> {campaign.location}
+                </div>
+                <p className="text-white/70 leading-relaxed mb-8 flex-grow text-sm">
+                  {campaign.desc}
+                </p>
                 
                 <div>
                   <a 

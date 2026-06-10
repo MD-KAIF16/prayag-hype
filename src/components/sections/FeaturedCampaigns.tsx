@@ -23,7 +23,7 @@ export function FeaturedCampaigns() {
       desc: "A storytelling campaign featuring the journey of Bombay Famous Shawarma. Focused on the founder's story, business journey, and customer love.",
       views: "3252+",
       link: "https://www.instagram.com/reel/DZAh7Ido07d/",
-      img: "https://images.unsplash.com/photo-1626804475297-41609ae08bfe?w=800&q=80"
+      img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80"
     },
     {
       name: "Atala Pudina Chai",
@@ -51,10 +51,10 @@ export function FeaturedCampaigns() {
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Featured <span className="text-gradient-primary">Campaigns</span>
+              Explore Our <span className="text-gradient-primary">Work</span>
             </h2>
             <p className="text-lg text-white/60">
-              Real results for real businesses in Prayagraj.
+              See how we've helped local businesses achieve massive reach and footfall through our strategic campaigns.
             </p>
           </div>
           <Link href="/campaigns" className="text-primary hover:text-white transition-colors flex items-center gap-2 font-medium">

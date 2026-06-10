@@ -12,7 +12,7 @@ export function Dashboard() {
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
             We don&apos;t just guess. We track, measure, and scale what works. 
-            Get transparent reporting on your campaign&apos;s performance.
+            Get transparent reporting on your campaign&apos;s local reach and business discovery.
           </p>
         </div>
 
@@ -38,15 +38,15 @@ export function Dashboard() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
               {[
-                { label: "Total Views", value: "1.2M", trend: "+45%" },
-                { label: "Profile Visits", value: "45K", trend: "+120%" },
-                { label: "Link Clicks", value: "8,400", trend: "+85%" },
-                { label: "Shares", value: "12K", trend: "+300%" },
+                { label: "Total Views", value: "42K+", trend: "Verified" },
+                { label: "Local Reach", value: "15K+", trend: "Verified" },
+                { label: "Business Discovery", value: "8,400", trend: "Verified" },
+                { label: "Shares", value: "1.2K", trend: "Verified" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/5 rounded-xl p-5 border border-white/5">
                   <div className="text-white/50 text-sm mb-2 font-medium">{stat.label}</div>
                   <div className="text-2xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-green-400 text-xs font-semibold">{stat.trend} vs last month</div>
+                  <div className="text-green-400 text-xs font-semibold">{stat.trend} Analytics</div>
                 </div>
               ))}
             </div>

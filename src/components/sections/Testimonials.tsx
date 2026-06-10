@@ -1,29 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 export function Testimonials() {
-  const reviews = [
+  const highlights = [
     {
-      name: "Rahul S.",
-      role: "Restaurant Owner",
-      text: "Prayag Hype completely changed our weekend footfall. The reel they made went viral locally and we had lines outside the door.",
+      name: "Chow Express",
+      category: "Restaurant Promotion",
+      views: "3706+",
+      img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80"
     },
     {
-      name: "Priya M.",
-      role: "Boutique Founder",
-      text: "Their aesthetic and understanding of the local market is unmatched. The ROI on our campaign was over 500%.",
+      name: "Bombay Famous Shawarma",
+      category: "Business Story",
+      views: "3252+",
+      img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80"
     },
     {
-      name: "Aman V.",
-      role: "Cafe Manager",
-      text: "Professional, creative, and highly effective. They are definitely Prayagraj's premium marketing agency.",
+      name: "Atala Pudina Chai",
+      category: "Hidden Gem Discovery",
+      views: "34600+",
+      img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80"
     },
     {
-      name: "Karan D.",
-      role: "Event Organizer",
-      text: "We sold out our event 3 days early thanks to their targeted local promotion. Absolutely brilliant work.",
+      name: "Vitthal International",
+      category: "City Update",
+      views: "1257+",
+      img: "https://images.unsplash.com/photo-1543837173-6c26bc89937b?w=800&q=80"
     }
   ];
 
@@ -31,8 +36,11 @@ export function Testimonials() {
     <section className="py-32 relative bg-[#050505] overflow-hidden">
       <div className="container max-w-7xl mx-auto px-6 mb-16 text-center">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-          Loved by <span className="text-gradient-primary">Local Founders</span>
+          Campaign <span className="text-gradient-primary">Highlights</span>
         </h2>
+        <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          We don't use fake testimonials. Our work speaks for itself through verifiable local awareness.
+        </p>
       </div>
 
       <div className="relative flex overflow-hidden">
@@ -41,25 +49,26 @@ export function Testimonials() {
         
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+          transition={{ duration: 25, ease: "linear", repeat: Infinity }}
           className="flex gap-6 px-6 w-max"
         >
-          {[...reviews, ...reviews].map((review, i) => (
-            <div key={i} className="glass-card rounded-3xl p-8 w-[400px] border border-white/10 shrink-0">
-              <div className="flex items-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-orange-400 fill-orange-400" />
-                ))}
+          {[...highlights, ...highlights, ...highlights].map((highlight, i) => (
+            <div key={i} className="glass-card rounded-3xl p-4 w-[350px] border border-white/10 shrink-0 flex items-center gap-4">
+              <div className="w-20 h-20 relative rounded-2xl overflow-hidden shrink-0">
+                <Image 
+                  src={highlight.img} 
+                  alt={highlight.name} 
+                  fill 
+                  className="object-cover"
+                />
               </div>
-              <p className="text-lg text-white/80 leading-relaxed mb-8">&quot;{review.text}&quot;</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
-                  {review.name.charAt(0)}
+              <div className="flex-grow">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <h3 className="font-bold text-white text-lg truncate w-36">{highlight.name}</h3>
+                  <CheckCircle className="w-4 h-4 text-blue-400 shrink-0" />
                 </div>
-                <div>
-                  <div className="font-bold text-white">{review.name}</div>
-                  <div className="text-sm text-white/50">{review.role}</div>
-                </div>
+                <div className="text-sm text-primary mb-1 font-medium">{highlight.views} Views</div>
+                <div className="text-xs text-white/50">{highlight.category}</div>
               </div>
             </div>
           ))}
